@@ -1,9 +1,22 @@
 import React from "react";
 import "./App.css";
 import Card from "./Components/Card";
+import { chatAI } from "./Service/genmini";
+import Modal from "./Components/Modal";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const MyContext = React.createContext();
+
+const listData = [
+  {
+    type: "user",
+    message: "abc",
+  },
+  {
+    type: "bot",
+    message: "hello",
+  },
+];
 
 function App() {
   const [modal, setModal] = React.useState(false);
@@ -38,17 +51,12 @@ function App() {
           </main>
         </div>
 
-        {modal ? (
-          <div className="modal">
-            this is modal
-            <button
-              style={{ fontWeight: 600 }}
-              onClick={() => handleModal(false)}
-            >
-              X
-            </button>
+        <button className="btnAssistant">
+          <div className="parentBox">
+            <button onClick={() => handleModal(true)}>assistant</button>
+            {modal ? <Modal handleModal={handleModal} /> : null}
           </div>
-        ) : null}
+        </button>
       </MyContext.Provider>
     </>
   );

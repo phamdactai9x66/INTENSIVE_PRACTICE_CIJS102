@@ -14,15 +14,38 @@
 
 .modal {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: -500px;
+  /* left: 0px; */
+  /* bottom: 0; */
+  left: -513px;
 
-  background-color: red;
+  background-color: #ae9191;
   width: 500px;
   height: 500px;
   display: flex;
   justify-content: space-between;  
   align-items: flex-start;
+  flex-direction: column;
 
+}
+
+.btnAssistant{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background-color: rgb(170, 69, 69);
+  padding: 10px;
+  color: white;
+}
+
+.parentBox {
+  position: relative;
+}
+
+.userConversation {
+  text-align: right;
+}
+
+.botConversation {
+  text-align: left;
 }
